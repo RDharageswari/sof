@@ -311,6 +311,7 @@ static int sof_card_late_probe(struct snd_soc_card *card)
 {
 	struct sof_card_private *ctx = snd_soc_card_get_drvdata(card);
 	struct snd_soc_component *component = NULL;
+	struct snd_soc_dapm_context *dapm = &card->dapm;
 	char jack_name[NAME_SIZE];
 	struct sof_hdmi_pcm *pcm;
 	int err;
@@ -349,7 +350,15 @@ static int sof_card_late_probe(struct snd_soc_card *card)
 		i++;
 	}
 
-	return hdac_hdmi_jack_port_init(component, &card->dapm);
+
+	err = hdac_hdmi_jack_port_init(component, &card->dapm);
+	if (err < 0)
+		return err;
+
+	snd_soc_dapm_disable_pin(dapm, "Left Spk");
+	snd_soc_dapm_disable_pin(dapm, "Right Spk");
+
+	return snd_soc_dapm_sync(dapm);
 }
 
 static const struct snd_kcontrol_new sof_controls[] = {
