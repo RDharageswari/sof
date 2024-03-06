@@ -24,7 +24,7 @@ SDW_DMIC_STREAM=SDW0-Capture"
 
 "cavs-sdw\;sof-mtl-rt722-l0\;PLATFORM=mtl,SDW_DMIC=1,NUM_SDW_AMP_LINKS=1,\
 SDW_AMP_FEEDBACK=false,SDW_SPK_STREAM=Playback-SmartAmp,SDW_DMIC_STREAM=Capture-SmartMic,\
-SDW_JACK_OUT_STREAM=Playback-SimpleJack,SDW_JACK_IN_STREAM=Capture-SimpleJack"
+SDW_JACK_OUT_STREAM=Playback-SimpleJack,SDW_JACK_IN_STREAM=Capture-SimpleJack,DEEP_BUF_SPK=true"
 
 "cavs-sdw\;sof-mtl-cs42l43-l0-cs35l56-l12\;PLATFORM=mtl,NUM_SDW_AMP_LINKS=2,SDW_DMIC=1,\
 SDW_SPK_STREAM=Playback-SmartAmp,SDW_SPK_IN_STREAM=Capture-SmartAmp,\
