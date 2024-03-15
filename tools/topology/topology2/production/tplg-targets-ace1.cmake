@@ -22,8 +22,10 @@ SDW_DMIC_STREAM=SDW0-Capture"
 # Jack codec + SmartAmp topology. No SDW_DMIC connection
 "cavs-sdw\;sof-mtl-rt713-l0-rt1316-l12\;PLATFORM=mtl,NUM_SDW_AMP_LINKS=2,HDMI1_ID=4,HDMI2_ID=5,HDMI3_ID=6"
 
-"cavs-sdw\;sof-mtl-rt722-l3\;PLATFORM=mtl,SDW_DMIC=1,NUM_SDW_AMP_LINKS=1,\
-SDW_AMP_FEEDBACK=false,SDW_SPK_STREAM=Playback-SmartAmp,SDW_DMIC_STREAM=Capture-SmartMic,\
+"cavs-sdw\;sof-mtl-rt722-l3\;PLATFORM=mtl,SDW_DMIC=0,NUM_SDW_AMP_LINKS=1,\
+NUM_DMICS=4,PDM1_MIC_A_ENABLE=1,PDM1_MIC_B_ENABLE=1,DMIC0_ID=3,DMIC1_ID=4,\
+PREPROCESS_PLUGINS=nhlt,NHLT_BIN=nhlt-sof-mtl-rt722-l3.bin,\
+SDW_AMP_FEEDBACK=false,SDW_SPK_STREAM=Playback-SmartAmp,\
 SDW_JACK_OUT_STREAM=Playback-SimpleJack,SDW_JACK_IN_STREAM=Capture-SimpleJack,DEEP_BUF_SPK=true"
 
 "cavs-sdw\;sof-mtl-cs42l43-l0-cs35l56-l12\;PLATFORM=mtl,NUM_SDW_AMP_LINKS=2,SDW_DMIC=1,\
